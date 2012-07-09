@@ -24,9 +24,14 @@ class Comment(models.Model):
 		return self.author
 
 class CommentAdmin(admin.ModelAdmin):
-	list_filter= ('created',)
+	list_filter= ('created','author')
 	search_fields= ('author','body') 
 	list_display= ('author','created','updated')
+
+class CommentInline(admin.TabularInline):
+	model= Comment
+
+
 
 admin.site.register(Post,PostAdmin)
 admin.site.register(Comment,CommentAdmin)
