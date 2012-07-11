@@ -1,0 +1,41 @@
+{%extends "blog/base.html"%}
+{%block content%}
+{}
+	<head> <title>QST  </title>
+{%block head%} {%endblock%}
+	</head>
+
+{%for post in posts%}	
+<a href= /blog/post{{post.}}>
+<h3> 
+</h3>
+
+			{{ post.title }}
+			
+	<ul>
+                
+		<li>
+
+			Created: {{ c.created }}
+		</li>
+		
+		<li>
+			Last updated: {{ c.updated }}
+		</li>
+
+		<li>
+			body{{post.body_first _60}}
+		</li>
+		
+
+		
+	</ul>
+
+{% endfor %}
+{%endblock%}
+
+</body>	
+
+
+{%endblock%}
+

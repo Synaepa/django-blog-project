@@ -1,0 +1,42 @@
+{%extends "blog/base.html"%}
+{%block content%}
+	<head> <title>QST  </title>
+{%block head%} {%endblock%}
+	</head>
+
+	<h3> Posts </h3>
+
+			{{ post.title }}
+			<br>{{ post.body }}</br>
+			
+
+	<h4> Comment </h4>
+	{%for c in comments%}
+	<ul>
+                <li>
+	               Author: {{c.author}}
+
+                </li>
+		<li>
+
+			Created: {{ c.created }}
+		</li>
+		
+		<li>
+			Last updated: {{ c.updated }}
+		</li>
+		
+		<li>
+			Body: {{c.body}}
+                                         
+		</li>
+		
+	</ul>
+
+{% endfor %}
+{%endblock%}
+
+</body>	
+
+
+{%endblock%}
