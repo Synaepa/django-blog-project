@@ -1,42 +1,50 @@
 {%extends "blog/base.html"%}
 {%block content%}
-	<head> <title>QST  </title>
-{%block head%} {%endblock%}
-	</head>
-
 	<h3> Posts </h3>
 
 			{{ post.title }}
 			<br>{{ post.body }}</br>
-			
+			<br>{{post.created}}</br>
+			<br>{{post.updated}}</br>
+			<br>{{post.body_first_60}}<br>
 
 	<h4> Comment </h4>
-	{%for c in comments%}
+	{% for c in comments %}
 	<ul>
-                <li>
+                 <li>
 	               Author: {{c.author}}
 
-                </li>
-		<li>
+                 </li>
+
+		 <li>
 
 			Created: {{ c.created }}
-		</li>
+		 </li>
 		
-		<li>
+		 <li>
 			Last updated: {{ c.updated }}
-		</li>
+		 </li>
 		
-		<li>
+		 <li>
 			Body: {{c.body}}
                                          
 		</li>
 		
 	</ul>
 
+<h3>New comment:</h3>
+<div>
+<form method='post' action="">
+{{ form.as_p }}
+<input type='submit' name='Submit'>
+</form>
+</div>
+
+
 {% endfor %}
 {%endblock%}
 
-</body>	
+	
 
 
-{%endblock%}
+

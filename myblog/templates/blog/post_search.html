@@ -1,20 +1,12 @@
 
-<html>
-{%extends "blog/base.html"%}
-<head>
-<title> </title>
-</head>
-	<body>
-<a href="/blog/search/term">
-<h3>QST(The best thing to happen)</h3>
-</a>
-<div id="posts">
-<h3>Search</h3>
-{%for i in posts%}
 
 
-{%end for%}
+{% extends "blog/base.html"%}
 {% block content %}
+{% for post in posts %}
+<ul>
+<li> search : {{post.posts}}</li>
+        <a href="/blog/posts/{{ post.body}}">{{post.title}}</a>
+</ul>
+{% endfor %}
 {% endblock %}
-	</body>
-</html>
